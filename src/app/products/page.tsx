@@ -1,5 +1,10 @@
 import { Products } from "@/views/products";
 
-export default function ProductsRoot() {
-  return <Products />;
+type SearchParams = { [key: string]: string | string[] | undefined };
+interface ProductsRootProps {
+  searchParams: SearchParams;
+}
+
+export default function ProductsRoot({ searchParams }: ProductsRootProps) {
+  return <Products searchParams={searchParams} />;
 }
